@@ -1,0 +1,92 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\nodejs\\\\node.exe',
+1 verbose cli   'D:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'grunt-uglify-concat',
+1 verbose cli   '--save-dev' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose node symlink D:\nodejs\\node.exe
+5 warn package.json scannr@1.0.0 No description
+6 warn package.json scannr@1.0.0 No repository field.
+7 warn package.json scannr@1.0.0 No README data
+8 verbose readDependencies using package.json deps
+9 verbose cache add [ 'grunt-uglify-concat', null ]
+10 verbose cache add name=undefined spec="grunt-uglify-concat" args=["grunt-uglify-concat",null]
+11 verbose parsed url { protocol: null,
+11 verbose parsed url   slashes: null,
+11 verbose parsed url   auth: null,
+11 verbose parsed url   host: null,
+11 verbose parsed url   port: null,
+11 verbose parsed url   hostname: null,
+11 verbose parsed url   hash: null,
+11 verbose parsed url   search: null,
+11 verbose parsed url   query: null,
+11 verbose parsed url   pathname: 'grunt-uglify-concat',
+11 verbose parsed url   path: 'grunt-uglify-concat',
+11 verbose parsed url   href: 'grunt-uglify-concat' }
+12 silly lockFile 78e760db-grunt-uglify-concat grunt-uglify-concat
+13 verbose lock grunt-uglify-concat C:\Users\akind_000\AppData\Roaming\npm-cache\78e760db-grunt-uglify-concat.lock
+14 silly lockFile 78e760db-grunt-uglify-concat grunt-uglify-concat
+15 silly lockFile 78e760db-grunt-uglify-concat grunt-uglify-concat
+16 verbose addNamed [ 'grunt-uglify-concat', '' ]
+17 verbose addNamed [ null, '*' ]
+18 silly lockFile e652c6c6-grunt-uglify-concat grunt-uglify-concat@
+19 verbose lock grunt-uglify-concat@ C:\Users\akind_000\AppData\Roaming\npm-cache\e652c6c6-grunt-uglify-concat.lock
+20 silly addNameRange { name: 'grunt-uglify-concat', range: '*', hasData: false }
+21 verbose request where is /grunt-uglify-concat
+22 verbose request registry https://registry.npmjs.org/
+23 verbose request id a2c9fc1d38ab8521
+24 verbose url raw /grunt-uglify-concat
+25 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-uglify-concat' ]
+26 verbose url resolved https://registry.npmjs.org/grunt-uglify-concat
+27 verbose request where is https://registry.npmjs.org/grunt-uglify-concat
+28 info trying registry request attempt 1 at 14:46:42
+29 http GET https://registry.npmjs.org/grunt-uglify-concat
+30 http 404 https://registry.npmjs.org/grunt-uglify-concat
+31 verbose headers { date: 'Thu, 20 Nov 2014 13:46:44 GMT',
+31 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+31 verbose headers   'content-type': 'application/json',
+31 verbose headers   'cache-control': 'max-age=0',
+31 verbose headers   'content-length': '52',
+31 verbose headers   'accept-ranges': 'bytes',
+31 verbose headers   via: '1.1 varnish',
+31 verbose headers   age: '0',
+31 verbose headers   'x-served-by': 'cache-ams4120-AMS',
+31 verbose headers   'x-cache': 'MISS',
+31 verbose headers   'x-cache-hits': '0',
+31 verbose headers   'x-timer': 'S1416491204.036942,VS0,VE161',
+31 verbose headers   'keep-alive': 'timeout=10, max=50',
+31 verbose headers   connection: 'Keep-Alive' }
+32 silly registry.get cb [ 404,
+32 silly registry.get   { date: 'Thu, 20 Nov 2014 13:46:44 GMT',
+32 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+32 silly registry.get     'content-type': 'application/json',
+32 silly registry.get     'cache-control': 'max-age=0',
+32 silly registry.get     'content-length': '52',
+32 silly registry.get     'accept-ranges': 'bytes',
+32 silly registry.get     via: '1.1 varnish',
+32 silly registry.get     age: '0',
+32 silly registry.get     'x-served-by': 'cache-ams4120-AMS',
+32 silly registry.get     'x-cache': 'MISS',
+32 silly registry.get     'x-cache-hits': '0',
+32 silly registry.get     'x-timer': 'S1416491204.036942,VS0,VE161',
+32 silly registry.get     'keep-alive': 'timeout=10, max=50',
+32 silly registry.get     connection: 'Keep-Alive' } ]
+33 silly lockFile e652c6c6-grunt-uglify-concat grunt-uglify-concat@
+34 silly lockFile e652c6c6-grunt-uglify-concat grunt-uglify-concat@
+35 error 404 404 Not Found: grunt-uglify-concat
+35 error 404
+35 error 404 'grunt-uglify-concat' is not in the npm registry.
+35 error 404 You should bug the author to publish it
+35 error 404 It was specified as a dependency of 'scannr'
+35 error 404
+35 error 404 Note that you can also install from a
+35 error 404 tarball, folder, or http url, or git url.
+36 error System Windows_NT 6.2.9200
+37 error command "D:\\nodejs\\\\node.exe" "D:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "grunt-uglify-concat" "--save-dev"
+38 error cwd D:\xampp\htdocs\scannr
+39 error node -v v0.10.32
+40 error npm -v 1.4.28
+41 error code E404
+42 verbose exit [ 1, true ]
