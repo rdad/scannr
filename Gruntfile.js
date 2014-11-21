@@ -7,6 +7,7 @@ module.exports = function(grunt) {
 
     // concat configuration
     concat: {
+      global: {
         src : ['src/raf.js', 'src/app.js','src/scan.js','src/analysis.js','src/footprint.js','src/display.js','src/close.js'],
         dest : 'dist/scannr.js'
       },
