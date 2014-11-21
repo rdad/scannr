@@ -20,13 +20,6 @@ scannr.footprint = {
 		}
 	},
 
-	jQuery: {
-
-		scan: function(){
-			console.log('scan for jquery');
-		}
-	},
-
 	Modernizr: {
 		name: 'Modernizr',
 		category: ['library','detection'],
