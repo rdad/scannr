@@ -1,0 +1,6 @@
+GoogleAnalyticsObject: {
+
+},
+ga: {
+	alias: 'GoogleAnalyticsObject'
+},

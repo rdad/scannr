@@ -5,18 +5,21 @@ module.exports = function(grunt) {
   grunt.initConfig({
     //pkg : grunt.file.readJSON('package.json'),
 
-
     // concat configuration
     concat: {
-      options: {
-        //banner: bannerContent
-      },
-      target : {
+      global: { 
         src : ['src/app.js','src/scan.js','src/analysis.js','src/footprint.js','src/display.js','src/close.js'],
         dest : 'dist/scannr.js'
+      },
+      footprint: {
+        options: {
+          banner: 'scannr.footprint = {',
+          footer: '};',
+        },
+        src: ['src/footprint/*.js'],
+        dest : 'src/footprint.js'
       }
     },
-
     // uglify configuration
     uglify: {
       target : {
@@ -24,10 +27,11 @@ module.exports = function(grunt) {
         dest : 'dist/scannr.min.js'
       },
       options: {}
-    },
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.registerTask('default', ['concat', 'uglify']);
+  grunt.registerTask('footprint', ['concat:footprint', 'default']);
+  grunt.registerTask('default', ['concat:global', 'uglify']);
 };

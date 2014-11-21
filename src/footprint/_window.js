@@ -1,8 +1,3 @@
-scannr.footprint = {Modernizr: {
-	name: 'Modernizr',
-	category: ['library','detection'],
-	url: 'http://www.modernizr.com'
-},
 window: {
 	scan: function(){
 
@@ -19,14 +14,3 @@ window: {
 		scannr.analysis.add(list);
 	}
 },
-GoogleAnalyticsObject: {
-
-},
-ga: {
-	alias: 'GoogleAnalyticsObject'
-},
-jQuery: {
-	scan: function(){
-		console.log('scan for jquery');
-	}
-},};
