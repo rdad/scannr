@@ -12,7 +12,7 @@ module.exports = function(grunt) {
         //banner: bannerContent
       },
       target : {
-        src : ['src/app.js','src/scan.js','src/analysis.js','src/footprint.js','src/display.js','src/close.js'],
+        src : ['src/raf.js', 'src/app.js','src/scan.js','src/analysis.js','src/footprint.js','src/display.js','src/close.js'],
         dest : 'dist/scannr.js'
       }
     },
