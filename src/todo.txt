@@ -1,0 +1,21 @@
+
+* footprint
+
+objet: {
+	name: 'Objet',
+	version: function(){
+
+	},
+	scan: function(){
+
+	},
+	url: '',
+	tags: [],
+	image: '',
+	alias: '',
+	parent: ''
+}
+
+required: name, url, tags
+
+* Définir un ensemble d'outils communs pour le footsprint, transmis par injection de dépendance.
