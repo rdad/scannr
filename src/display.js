@@ -45,25 +45,22 @@ scannr.display = {
 			'font-size': '17px'
 		};
 
-		//if ( !($( "#displayBox" ).length) ) {
+		
+		$("#displayBox").remove();
+		$('html').append('<div id="displayBox" dataState="off"><span id="close">X</span></div>');
+		$('body').css({'-webkit-filter': 'blur(5px)'});
+		$("#displayBox").css(displayCss);
+		$('#close').css(closeCss);
+		for (var i = 0; i < this.list.length; i++) {
+			var itemList = this.list[i];
+			$('#displayBox').append('<h2>'+itemList.name+'</h2><p>'+itemList.category+'</p><p>'+itemList.url+'</p>');
+		};
+		
+		$("#close").on('click', function(){
+			$("#scannrScript").remove();
 			$("#displayBox").remove();
-			$('html').append('<div id="displayBox" dataState="off"><span id="close">X</span></div>');
-			$('body').css({'-webkit-filter': 'blur(5px)'});
-			$("#displayBox").css(displayCss);
-			$('#close').css(closeCss);
-			for (var i = 0; i < this.list.length; i++) {
-				var itemList = this.list[i];
-				$('#displayBox').append('<h2>'+itemList.name+'</h2><p>'+itemList.category+'</p><p>'+itemList.url+'</p>');
-			};
-		//};
-
-			
-
-			$("#close").on('click', function(){
-				console.log('click');
-				$("#displayBox").remove();
-				$('body').css({'-webkit-filter': 'blur(0)'});
-			});
+			$('body').css({'-webkit-filter': 'blur(0)'});
+		});
 
 
 	}
