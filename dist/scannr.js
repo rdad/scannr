@@ -22,8 +22,6 @@
             clearTimeout(id);
         };
 }());
-
-
 (function(){
 
 	// app
@@ -38,8 +36,8 @@
 		},
 
 		start: function(){
+            console.log('--- scannr : start ---');
 			this.analysis.run();
-			this.scan.run();
 		}
 	};
 
@@ -65,25 +63,49 @@ scannr.scan = {
 };
 
 // Analysis
+
+var cpt = {
+	nb: 0,
+	wait: 30
+};
+
+var raf_id;
 	
 scannr.analysis = {
 
 	list : [],
 
 	init: function(){
-
-
 	},
 
 	run: function(){
 
-		requestAnimationFrame(scannr.analysis.run);
+		raf_id = requestAnimationFrame(scannr.analysis.run);
+
+		var no_action = true;
 		
 		if(scannr.analysis.list.length>0){
 			scannr.analysis.detect();
+			no_action = false;
 		}
 
-		scannr.scan.run();
+		if(scannr.scan.list.length > 0){
+			scannr.scan.run();
+			no_action = false;
+		}
+
+		// end of scan/analysis ?
+		
+		if(no_action){
+			cpt.nb++;
+			if(cpt.nb>cpt.wait){
+				cancelAnimationFrame(raf_id);
+				scannr.display.end();
+				console.log('--- scannr : end ---');
+			}
+		}else{
+			cpt.nb = 0;
+		}
 	},
 
 	add: function(data){
@@ -114,8 +136,6 @@ scannr.analysis = {
 			scannr.display.add(target);
 
 			console.log('detected: '+name);
-		}else{
-			//console.log('not found: '+name);
 		}
 	}
 }
@@ -167,7 +187,58 @@ scannr.display = {
 	},
 
 	end: function(){
-		console.log(this.list);
+
+		var displayCss = {
+			width: '100%',
+			height: '100%',
+			'background-color': 'rgba(0, 0, 0, 0.5)',
+			position: 'fixed',
+			'z-index': 10000000000,
+			top: 0,
+			left: 0,
+			padding: "50px 0",
+			'text-align': 'center',
+			color: 'white'
+
+		};
+
+		var closeCss = {
+			'border-radius':'50%',
+			'background-color': 'rgba(255, 0, 0, 0.5)',
+			width: '30px',
+			height: '19px',
+			position: 'fixed',
+			right: '15px',
+			top: '15px',
+			color: '#000',
+			padding: '5.5px 0',
+			'box-shadow': '1px 1px 5px #000',
+			cursor: 'pointer',
+			'font-family': 'Arial, sans-serif',
+			'font-size': '17px'
+		};
+
+		//if ( !($( "#displayBox" ).length) ) {
+			$("#displayBox").remove();
+			$('html').append('<div id="displayBox" dataState="off"><span id="close">X</span></div>');
+			$('body').css({'-webkit-filter': 'blur(5px)'});
+			$("#displayBox").css(displayCss);
+			$('#close').css(closeCss);
+			for (var i = 0; i < this.list.length; i++) {
+				var itemList = this.list[i];
+				$('#displayBox').append('<h2>'+itemList.name+'</h2><p>'+itemList.category+'</p><p>'+itemList.url+'</p>');
+			};
+		//};
+
+			
+
+			$("#close").on('click', function(){
+				console.log('click');
+				$("#displayBox").remove();
+				$('body').css({'-webkit-filter': 'blur(0)'});
+			});
+
+
 	}
 };
 
